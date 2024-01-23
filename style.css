@@ -227,6 +227,10 @@
     border-color: #1ac2e0;
  }
 
+ .color_fondo_texto {
+    display: flex;
+ }
+
  .btn_text_color {
     width: 100%;
     height: 30px;

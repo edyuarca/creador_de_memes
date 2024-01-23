@@ -19,13 +19,13 @@
     
     <div class="contenedor_general">
         <div class="box_meme">
-            <div class="box_meme_shadow">
-                <div class="box_texto" id="">
+            <div class="box_meme_shadow" id="meme_box">
+                <div class="box_texto" id="txt_superior">
                     <p>TOP TEXT</p>
                 </div>
-                <div class="imagen_meme">
+                <div class="imagen_meme" id="box_img_meme">
                 </div>
-                <div class="box_texto">
+                <div class="box_texto" id="txt_inferior">
                     <p>BOTTOM TEXT</p>
                 </div>
             </div>
@@ -151,19 +151,19 @@
                 </div>
 
                 <div>
-                    <h3>COLOR</h3>
                     <div>
+                        <h3>COLOR</h3>
                         <label for="color"></label>
                         <input type="color" id="color" name="color" class="btn_text_color">
                     </div>
-                    <h3>FONDO</h3>
                     <div>
+                        <h3>FONDO</h3>
                         <label for="fondo"></label>
                         <input type="color" id="fondo" name="fondo" class="btn_text_color">
                     </div>
                     <div>
-                        <input type="checkbox" name="sin_texto_inf" id="sin_texto_inf"> 
-                        <label for="sin_texto_inf" class="color_checkbox">Sin texto inferior</label>
+                        <input type="checkbox" name="fondo_transparente" id="fondo_transparente"> 
+                        <label for="fondo_transparente" class="color_checkbox">Fondo transparente</label>
                     </div>
                 </div>
 
