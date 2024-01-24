@@ -14,6 +14,7 @@ const descargarMeme = document.getElementById("descargar_meme")
 
 /*aside imagen*/
 
+const asideImagen = document.getElementById("aside_imagen")
 const campoUrl = document.getElementById("url")
 const fondo = document.getElementById("fondo")
 const fondo_desplegable = document.getElementById("fondo_desplegable")
@@ -32,6 +33,7 @@ const reestablecerFiltros = document.getElementById("reestablecer_filtros")
 
 /*aside texto*/
 
+const asideTexto = document.getElementById("aside_texto")
 const textoSuperior = document.getElementById("superior")
 const sinTextoSup = document.getElementById("sin_texto_sup")
 const textoInferior = document.getAnimations("inferior")
@@ -53,3 +55,16 @@ const contornoOscuro = document.getElementById("oscuro")
 
 const espaciado = document.getElementById("espaciado")
 const interlineado = document.getElementById("interlineado")
+
+
+const ocultarPanelTexto = () => {
+    asideTexto.style.display = "none"
+}
+
+iconoImagen.addEventListener('click', ocultarPanelTexto);
+
+iconoTexto.addEventListener(`click`, () => {
+    asideImagen.style.display = "block";
+  } )
+
+console.log(iconoImagen)
