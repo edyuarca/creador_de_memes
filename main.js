@@ -1,8 +1,11 @@
+const body = document.getElementById("body")
+
 /*barra navegacion*/
 
 const iconoImagen = document.getElementById("icono_imagen")
 const iconoTexto = document.getElementById("icono_texto")
 const modoOscuro = document.getElementById("modo_oscuro")
+const modoClaro = document.getElementById( "modo_claro")
 
 /*contenedor meme*/
 
@@ -56,15 +59,69 @@ const contornoOscuro = document.getElementById("oscuro")
 const espaciado = document.getElementById("espaciado")
 const interlineado = document.getElementById("interlineado")
 
+/*Funciones paneles*/
 
+const ocultarPanelImagen = () => {
+    asideImagen.style.display = "none"
+}
+const mostrarPanelImagen = () => {
+    asideImagen.style.display = "block"
+}
 const ocultarPanelTexto = () => {
     asideTexto.style.display = "none"
 }
+const mostrarPanelTexto = () => {
+    asideTexto.style.display = "block"
+}
 
-iconoImagen.addEventListener('click', ocultarPanelTexto);
+const activarModoOscuro = () => {
+    body.style.backgroundColor = "rgb(68, 73, 79)"
+}
+const desactivarModoOscuro = () => {
+    body.style.backgroundColor = "rgb(255, 255, 255)"
+}
+const btnModoClaro = () => {
+    modoClaro.style.display = "block"
+}
+const btnModoOscuro = () => {
+    modoOscuro.style.display = "none"
+}
 
-iconoTexto.addEventListener(`click`, () => {
-    asideImagen.style.display = "block";
-  } )
+const visualizacionFondoModos = () => {
+    if (body.style.backgroundColor === "rgb(68, 73, 79)" ) {desactivarModoOscuro ();} /*esta funcion puede ser remplazada por la de la linea 93*/
+    else {activarModoOscuro ();}
+}
+const visualizacionBtnModos = () => {
+    if (modoClaro === "none") {btnModoClaro ();}
+    else {btnModoOscuro}
+}
 
-console.log(iconoImagen)
+const visualizacionModos = () => {
+    visualizacionFondoModos ();
+    visualizacionBtnModos ();
+}
+
+iconoTexto.addEventListener(`click`, mostrarPanelTexto)
+iconoTexto.addEventListener(`click`, ocultarPanelImagen)
+
+iconoImagen.addEventListener(`click`, mostrarPanelImagen)
+iconoImagen.addEventListener(`click`, ocultarPanelTexto)
+
+modoOscuro.addEventListener(`click`, visualizacionModos) /*modoOscuro.addEventListener(`click`, () => {
+    if (body.style.backgroundColor === "rgb(68, 73, 79)"") {desactivarModoOscuro ();}
+    else {activarModoOscuro ()}
+})*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

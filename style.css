@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 .encabezado {
     background: linear-gradient(to top, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
 }
@@ -54,6 +55,11 @@
     margin-right: 5px;
     
 }
+
+#modo_claro{
+    display: none;
+}
+
  /*panel imagen*/
 
 .contenedor_general {
@@ -147,6 +153,10 @@
 }
 
 /*panel texto*/
+
+#aside_texto {
+    display: none;
+}
 
  .aside_texto {
     display: flex;
@@ -300,6 +310,7 @@
 .box_texto {
     height: 100px;
     border: 2px solid #000;
+    background-color: #fff;
 }
 
 .box_texto p{
