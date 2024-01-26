@@ -80,25 +80,32 @@ const activarModoOscuro = () => {
 const desactivarModoOscuro = () => {
     body.style.backgroundColor = "rgb(255, 255, 255)"
 }
-const btnModoClaro = () => {
-    modoClaro.style.display = "block"
-}
-const btnModoOscuro = () => {
-    modoOscuro.style.display = "none"
-}
 
-const visualizacionFondoModos = () => {
+const visualizacionFondoModos1 = () => {
     if (body.style.backgroundColor === "rgb(68, 73, 79)" ) {desactivarModoOscuro ();} /*esta funcion puede ser remplazada por la de la linea 93*/
     else {activarModoOscuro ();}
 }
-const visualizacionBtnModos = () => {
-    if (modoClaro === "none") {btnModoClaro ();}
-    else {btnModoOscuro}
+
+const visualizacionFondoModos2 = () => {
+    if (body.style.backgroundColor === "rgb(255, 255, 255)" ) {activarModoOscuro ();} /*esta funcion puede ser remplazada por la de la linea 93*/
+    else {desactivarModoOscuro ();}
 }
 
-const visualizacionModos = () => {
-    visualizacionFondoModos ();
-    visualizacionBtnModos ();
+
+const activarbtnClaro = () => {
+    modoClaro.style.display = "block"
+}
+const desactivarbtnoscuro = () => {
+    modoOscuro.style.display = "none"
+}
+
+const pruebaBtnModos1 = () => {
+        modoClaro.style.display = "block"
+        modoOscuro.style.display = "none"
+}
+const pruebaBtnModos2 = () => {
+    modoClaro.style.display = "none"
+    modoOscuro.style.display = "block"
 }
 
 iconoTexto.addEventListener(`click`, mostrarPanelTexto)
@@ -107,12 +114,11 @@ iconoTexto.addEventListener(`click`, ocultarPanelImagen)
 iconoImagen.addEventListener(`click`, mostrarPanelImagen)
 iconoImagen.addEventListener(`click`, ocultarPanelTexto)
 
-modoOscuro.addEventListener(`click`, visualizacionModos) /*modoOscuro.addEventListener(`click`, () => {
-    if (body.style.backgroundColor === "rgb(68, 73, 79)"") {desactivarModoOscuro ();}
-    else {activarModoOscuro ()}
-})*/
+modoOscuro.addEventListener(`click`, visualizacionFondoModos1)
+modoOscuro.addEventListener(`click`, pruebaBtnModos1)
 
-
+modoClaro.addEventListener(`click`, visualizacionFondoModos2)
+modoClaro.addEventListener(`click`, pruebaBtnModos2)
 
 
 
