@@ -11,7 +11,7 @@ const modoClaro = document.getElementById( "modo_claro")
 
 const memeBox = document.getElementById("meme_box")
 const boxTxtSuperior = document.getElementById("txt_superior")
-const boxImgagen = document.getElementById("box_img_meme")
+const boxImagen = document.getElementById("box_img_meme")
 const boxTxtInferior = document.getElementById("txt_inferior")
 const descargarMeme = document.getElementById("descargar_meme")
 
@@ -91,7 +91,6 @@ const visualizacionFondoModos2 = () => {
     else {desactivarModoOscuro ();}
 }
 
-
 const activarbtnClaro = () => {
     modoClaro.style.display = "block"
 }
@@ -119,6 +118,23 @@ modoOscuro.addEventListener(`click`, pruebaBtnModos1)
 
 modoClaro.addEventListener(`click`, visualizacionFondoModos2)
 modoClaro.addEventListener(`click`, pruebaBtnModos2)
+
+/*boton url y box img meme */
+
+const cargarImagen = () => {
+    const imagenUrl = campoUrl.value;
+    const imagenNueva = new Image();
+    imagenNueva.src = imagenUrl 
+    imagenNueva.style.maxWidth = `100%`
+    boxImagen.innerHTML = ``;
+    boxImagen.appendChild(imagenNueva);
+}
+campoUrl.addEventListener(`input`, cargarImagen)
+
+/*boton color fondo imagen */
+
+
+
 
 
 
