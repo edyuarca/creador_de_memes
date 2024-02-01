@@ -1,209 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.js">
-</head>
-<body id="body">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.js" />
+  </head>
+  <body id="body">
     <nav class="encabezado">
-        <h1>Generador de Memes</h1>
-        <ul class="menu_meme">
-            <li id="icono_imagen"><img src="imagenes/img icon.png" alt="icono imagen"><span>Imagen</span></li>
-            <li id="icono_texto"><img src="imagenes/texto icono.png" alt="icono texto"><span>Texto</span></li>
-            <li id="modo_oscuro"><img src="imagenes/modo-oscuro icono.png" alt="modo oscuro"><span>Modo oscuro</span></li>
-            <li id="modo_claro"><img src="imagenes/modo-claro-icono.png" alt="modo claro"><span>Modo claro</span></li>
-        </ul>
+      <h1>Generador de Memes</h1>
+      <ul class="menu_meme">
+        <li id="icono_imagen">
+          <img src="imagenes/img icon.png" alt="icono imagen" /><span
+            >Imagen</span
+          >
+        </li>
+        <li id="icono_texto">
+          <img src="imagenes/texto icono.png" alt="icono texto" /><span
+            >Texto</span
+          >
+        </li>
+        <li id="modo_oscuro">
+          <img src="imagenes/modo-oscuro icono.png" alt="modo oscuro" /><span
+            >Modo oscuro</span
+          >
+        </li>
+        <li id="modo_claro">
+          <img src="imagenes/modo-claro-icono.png" alt="modo claro" /><span
+            >Modo claro</span
+          >
+        </li>
+      </ul>
     </nav>
-    
+
     <div class="contenedor_general">
-        <div class="box_meme">
-            <div class="box_meme_shadow" id="meme_box">
-                <div class="box_texto" id="txt_superior">
-                    <p>TOP TEXT</p></div>
-                <div class="imagen_meme" id="box_img_meme"></div>
-                <div class="box_texto" id="txt_inferior">
-                    <p>BOTTOM TEXT</p></div>
+      <div class="box_meme">
+        <div class="box_meme_shadow" id="meme_box">
+          <div class="box_texto" id="txt_superior">
+            <p>TOP TEXT</p>
+          </div>
+          <div class="imagen_meme" id="box_img_meme"></div>
+          <div class="box_texto" id="txt_inferior">
+            <p>BOTTOM TEXT</p>
+          </div>
+        </div>
+        <div class="btn_descargar">
+          <label for="descargar_meme"></label>
+          <button type="button" id="descargar_meme" name="descargar_meme">
+            Descargar meme
+          </button>
+        </div>
+      </div>
+
+      <div class="aside_imagen" id="aside_imagen">
+        <form action="">
+          <h2>IMAGEN</h2>
+          <div>
+            <h3>URL</h3>
+            <div class="campo_url">
+              <label for="url"></label>
+              <input type="url" id="url" name="url" />
             </div>
-            <div class="btn_descargar">
-                <label for="descargar_meme"></label>
-                <button type="button"  id="descargar_meme" name="descargar_meme">Descargar meme</button>
+          </div>
+          <div>
+            <h3>FONDO</h3>
+            <div class="botones_fondo">
+              <div class="contenedor_fondo_color">
+                <label for="fondo"></label>
+                <input
+                  type="color"
+                  id="fondo"
+                  name="fondo"
+                  class="btn_fondo_color"
+                  value="#000"
+                />
+                <span id="color_hex">#000</span>
+              </div>
+              <div class="contenedor_fondo_desplegable">
+                <label for="fondo_desplegable"></label>
+                <select
+                  name="fondo_desplegable"
+                  id="fondo_desplegable"
+                  class="btn_fondo_desplegable"
+                >
+                  <option value="unset">ninguno</option>
+                  <option value="lighten">aclarar</option>
+                  <option value="darken">oscurecer</option>
+                  <option value="difference">diferencia</option>
+                  <option value="luminosity">luminosidad</option>
+                  <option value="multiply">multiplicar</option>
+                </select>
+              </div>
             </div>
-        </div>
-        
-        <div class="aside_imagen" id="aside_imagen">
-            
-            <form action="">
-                <h2>IMAGEN</h2>
-                <div>
-                    <h3>URL</h3>
-                    <div class="campo_url">
-                        <label for="url"></label>
-                        <input type="url" id="url" name="url">
-                    </div>
-                </div>
-                <div>
-                    <h3>FONDO</h3>
-                    <div class="botones_fondo">
-                        <div class="contenedor_fondo_desplegable">
-                            <label for="fondo"></label>
-                            <input type="color" id="fondo" name="fondo" class="btn_fondo_desplegable">
-                        </div>
-                        <div class="contenedor_fondo_desplegable">
-                            <label for="fondo_desplegable"></label>
-                            <select name="fondo_desplegable" id="fondo_desplegable" class="btn_fondo_desplegable">
-                                <option value="ninguno">ninguno</option>
-                                <option value="aclarar">aclarar</option>
-                                <option value="oscurecer">oscurecer</option>
-                                <option value="diferencia">diferencia</option>
-                                <option value="luminosidad">luminosidad</option>
-                                <option value="multiplicar">multiplicar</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3>FILTROS</h3>
-                    <div class="aside_imagen_filtros">
-                        <label for="brillo">Brillo</label>
-                        <input type="range" id="brillo" name="brillo" min="0" max="1" step="0.1" value="1">
+          </div>
+          <div>
+            <h3>FILTROS</h3>
+            <div class="aside_imagen_filtros">
+              <label for="brillo">Brillo</label>
+              <input
+                type="range"
+                id="brillo"
+                name="brillo"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+              />
 
-                        <label for="opacidad">Opacidad</label>
-                        <input type="range" id="opacidad" name="opacidad" min="0" max="1" step="0.1" value="1">
+              <label for="opacidad">Opacidad</label>
+              <input
+                type="range"
+                id="opacidad"
+                name="opacidad"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+              />
 
-                        <label for="contraste">Contraste</label>
-                        <input type="range" id="contraste" name="contraste" min="100%" max="1000%" step="1%" value="100%">
+              <label for="contraste">Contraste</label>
+              <input
+                type="range"
+                id="contraste"
+                name="contraste"
+                min="100%"
+                max="1000%"
+                step="1%"
+                value="100%"
+              />
 
-                        <label for="desenfoque">Desenfoque</label>
-                        <input type="range" id="desenfoque" name="desenfoque" min="0px" max="10px" step="0.1px" value="0px">
+              <label for="desenfoque">Desenfoque</label>
+              <input
+                type="range"
+                id="desenfoque"
+                name="desenfoque"
+                min="0px"
+                max="10px"
+                step="0.1px"
+                value="0px"
+              />
 
-                        <label for="escala_grises">Escala de grises</label>
-                        <input type="range" id="escala_grises" name="escala_grises" min="0%" max="100%" step="1%" value="0%">
+              <label for="escala_grises">Escala de grises</label>
+              <input
+                type="range"
+                id="escala_grises"
+                name="escala_grises"
+                min="0%"
+                max="100%"
+                step="1%"
+                value="0%"
+              />
 
-                        <label for="sepia">Sepia</label>
-                        <input type="range" id="sepia" name="sepia" min="0%" max="100%" step="1%" value="0%">
+              <label for="sepia">Sepia</label>
+              <input
+                type="range"
+                id="sepia"
+                name="sepia"
+                min="0%"
+                max="100%"
+                step="1%"
+                value="0%"
+              />
 
-                        <label for="hue">Hue</label>
-                        <input type="range" id="hue" name="hue" min="0deg" max="359deg" step="1deg  " value="0deg">
+              <label for="hue">Hue</label>
+              <input
+                type="range"
+                id="hue"
+                name="hue"
+                min="0deg"
+                max="359deg"
+                step="1deg  "
+                value="0deg"
+              />
 
-                        <label for="saturado">Saturado</label>
-                        <input type="range" id="saturado" name="saturado" min="100%" max="1000%" step="10%" value="100%">
+              <label for="saturado">Saturado</label>
+              <input
+                type="range"
+                id="saturado"
+                name="saturado"
+                min="100%"
+                max="1000%"
+                step="10%"
+                value="100%"
+              />
 
-                        <label for="negativo">Negativo</label>
-                        <input type="range" id="negativo" name="negativo" in="0" max="1" step="0.1" value="1" >
-                    </div>
-                </div>    
-                <div>
-                    <button type="reset" class="btn_reestablecer_img" id="reestablecer_filtros">Reestablecer filtros</button>
-                </div>
-            </form>
-        </div>
-        
-        <div class="aside_texto" id="aside_texto">
-            
-            <form action="">
-                <h2>TEXTO</h2>
-                <div>
-                    <h3>SUPERIOR</h3>
-                    <label for="superior"></label>
-                    <input type="text" id="superior" name="superior" class="texto_meme">
-                    <input type="checkbox" name="sin_texto_sup" id="sin_texto_sup"> 
-                    <label for="sin_texto_sup" class="color_checkbox">Sin texto superior</label>
-                </div>
+              <label for="negativo">Negativo</label>
+              <input
+                type="range"
+                id="negativo"
+                name="negativo"
+                in="0"
+                max="1"
+                step="0.1"
+                value="1"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="reset"
+              class="btn_reestablecer_img"
+              id="reestablecer_filtros"
+            >
+              Reestablecer filtros
+            </button>
+          </div>
+        </form>
+      </div>
 
-                <div class="texto_inferior">
-                    <h3>INFERIOR</h3>
-                    <label for="inferior"></label>
-                    <input type="text" id="inferior" name="inferior" class="texto_meme">
-                    <input type="checkbox" name="sin_texto_inf" id="sin_texto_inf"> 
-                    <label for="sin_texto_inf" class="color_checkbox">Sin texto inferior</label>
-                </div>
+      <div class="aside_texto" id="aside_texto">
+        <form action="">
+          <h2>TEXTO</h2>
+          <div>
+            <h3>SUPERIOR</h3>
+            <label for="superior"></label>
+            <input
+              type="text"
+              id="superior"
+              name="superior"
+              class="texto_meme"
+            />
+            <input type="checkbox" name="sin_texto_sup" id="sin_texto_sup" />
+            <label for="sin_texto_sup" class="color_checkbox"
+              >Sin texto superior</label
+            >
+          </div>
 
-                <div>
-                    <h3>FUENTE</h3>
-                    <select name="fuentes_desplegables" id="fuentes_desplegables" class="fuentes_desplegables">
-                        <option value="arial">Arial</option>
-                        <option value="arial_black">Arial Black</option>
-                        <option value="american_typewriter">American Typewriter</option>
-                        <option value="andale_mono">Andale mono</option>
-                        <option value="comic_sans_ms">Comic Sans MS</option>
-                        <option value="helvetica">Helvetica</option>
-                        <option value="impact">Impact</option>
-                        <option value="verdana">Verdana</option>
-                        <option value="times_new_roman">Times New Roman</option>
-                    </select>
-                    <div class="tamano_alineacion">
-                        <div class="btn_number_fuente">
-                            <label for="tamano_fuente"></label>
-                            <input type="number" id="tamano_fuente" name="tamano_fuente" min="10" max="100" value="40">
-                        </div>
-                
-                        <div class="btn_alineacion">
-                            <button type="button"  id="izquierda" name="izquierda"><img src="imagenes/alinear-a-la-izquierda.png" alt="alinear-a-la-izquierda"></button>
-                            <button type="button"  id="centro" name="centro"><img src="imagenes/alinear-al-centro.png" alt="alinear-al-centro"></button>
-                            <button type="button"  id="derecha" name="derecha"><img src="imagenes/alinear-a-la-derecha.png" alt="alinear-a-la-derecha"></button>
-                        </div>
-                    </div>
-                </div>
+          <div class="texto_inferior">
+            <h3>INFERIOR</h3>
+            <label for="inferior"></label>
+            <input
+              type="text"
+              id="inferior"
+              name="inferior"
+              class="texto_meme"
+            />
+            <input type="checkbox" name="sin_texto_inf" id="sin_texto_inf" />
+            <label for="sin_texto_inf" class="color_checkbox"
+              >Sin texto inferior</label
+            >
+          </div>
 
-                <div>
-                    <div>
-                        <h3>COLOR</h3>
-                        <label for="color"></label>
-                        <input type="color" id="color" name="color" class="btn_text_color">
-                    </div>
-                    <div>
-                        <h3>FONDO</h3>
-                        <label for="fondo"></label>
-                        <input type="color" id="fondo" name="fondo" class="btn_text_color">
-                    </div>
-                    <div>
-                        <input type="checkbox" name="fondo_transparente" id="fondo_transparente"> 
-                        <label for="fondo_transparente" class="color_checkbox">Fondo transparente</label>
-                    </div>
-                </div>
+          <div>
+            <h3>FUENTE</h3>
+            <select
+              name="fuentes_desplegables"
+              id="fuentes_desplegables"
+              class="fuentes_desplegables"
+            >
+              <option value="arial">Arial</option>
+              <option value="arial_black">Arial Black</option>
+              <option value="american_typewriter">American Typewriter</option>
+              <option value="andale_mono">Andale mono</option>
+              <option value="comic_sans_ms">Comic Sans MS</option>
+              <option value="helvetica">Helvetica</option>
+              <option value="impact">Impact</option>
+              <option value="verdana">Verdana</option>
+              <option value="times_new_roman">Times New Roman</option>
+            </select>
+            <div class="tamano_alineacion">
+              <div class="btn_number_fuente">
+                <label for="tamano_fuente"></label>
+                <input
+                  type="number"
+                  id="tamano_fuente"
+                  name="tamano_fuente"
+                  min="10"
+                  max="100"
+                  value="40"
+                />
+              </div>
 
-                <div>
-                    <h3>CONTORNO</h3>
-                    <div class="btn_contorno">
-                        <div>
-                            <label for="ningun_contorno"></label>
-                            <button type="button"  id="ningun_contorno" name="ningun_contorno">NINGUNO</button>
-                        </div>
-                        <div>
-                            <label for="claro"></label>
-                            <button type="button"  id="claro" name="claro">CLARO</button>
-                        </div>
-                        <div>
-                            <label for="oscuro"></label>
-                            <button type="button"  id="oscuro" name="oscuro">OSCURO</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3>ESPACIADO</h3>
-                    <label for="espaciado"></label>
-                    <input type="number" id="espaciado" name="espaciado" min="10" max="100" value="35" class="btn_espaciado">
-                </div>
-                <div>
-                    <h3>INTERLINEADO</h3>
-                    <select name="interlineado" id="interlineado" class="btn_interlineado">
-                        <option value="0.8">0.8</option>
-                        <option value="1">1</option>
-                        <option value="1.2">1.2</option>
-                        <option value="1.5">1.5</option>
-                        <option value="2">2</option>
-                        <option value="2.5">2.5</option>
-                    </select>
-                </div>
-                
-            </form>
+              <div class="btn_alineacion">
+                <button type="button" id="izquierda" name="izquierda">
+                  <img
+                    src="imagenes/alinear-a-la-izquierda.png"
+                    alt="alinear-a-la-izquierda"
+                  />
+                </button>
+                <button type="button" id="centro" name="centro">
+                  <img
+                    src="imagenes/alinear-al-centro.png"
+                    alt="alinear-al-centro"
+                  />
+                </button>
+                <button type="button" id="derecha" name="derecha">
+                  <img
+                    src="imagenes/alinear-a-la-derecha.png"
+                    alt="alinear-a-la-derecha"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
 
-        </div>
+          <div>
+            <div>
+              <h3>COLOR</h3>
+              <label for="color"></label>
+              <input
+                type="color"
+                id="color"
+                name="color"
+                class="btn_text_color"
+              />
+            </div>
+            <div>
+              <h3>FONDO</h3>
+              <label for="fondo"></label>
+              <input
+                type="color"
+                id="fondo"
+                name="fondo"
+                class="btn_text_color"
+              />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="fondo_transparente"
+                id="fondo_transparente"
+              />
+              <label for="fondo_transparente" class="color_checkbox"
+                >Fondo transparente</label
+              >
+            </div>
+          </div>
+
+          <div>
+            <h3>CONTORNO</h3>
+            <div class="btn_contorno">
+              <div>
+                <label for="ningun_contorno"></label>
+                <button
+                  type="button"
+                  id="ningun_contorno"
+                  name="ningun_contorno"
+                >
+                  NINGUNO
+                </button>
+              </div>
+              <div>
+                <label for="claro"></label>
+                <button type="button" id="claro" name="claro">CLARO</button>
+              </div>
+              <div>
+                <label for="oscuro"></label>
+                <button type="button" id="oscuro" name="oscuro">OSCURO</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3>ESPACIADO</h3>
+            <label for="espaciado"></label>
+            <input
+              type="number"
+              id="espaciado"
+              name="espaciado"
+              min="10"
+              max="100"
+              value="35"
+              class="btn_espaciado"
+            />
+          </div>
+          <div>
+            <h3>INTERLINEADO</h3>
+            <select
+              name="interlineado"
+              id="interlineado"
+              class="btn_interlineado"
+            >
+              <option value="0.8">0.8</option>
+              <option value="1">1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+            </select>
+          </div>
+        </form>
+      </div>
     </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
