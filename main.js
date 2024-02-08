@@ -10,7 +10,6 @@ const modoClaro = document.getElementById("modo_claro");
 /*contenedor meme*/
 
 const memeBox = document.getElementById("meme_box");
-const imagenMeme = document.querySelector(".imagen_meme");
 const boxTxtSuperior = document.getElementById("txt_superior");
 const boxImagen = document.getElementById("box_img_meme");
 const boxTxtInferior = document.getElementById("txt_inferior");
@@ -250,18 +249,18 @@ textoInferior.addEventListener(`input`, nuevoTextoInf);
 
 const ocultarTextoS = () => {
   if (sinTextoSup.checked) {
-    pDelBoxS.style.display = "none";
+    boxTxtSuperior.style.visibility = "hidden";
   } else {
-    pDelBoxS.style.display = "block";
+    boxTxtSuperior.style.visibility = "visible";
   }
 };
 sinTextoSup.addEventListener(`change`, ocultarTextoS);
 
 const ocultarTextoI = () => {
   if (sinTextoInf.checked) {
-    pDelBoxI.style.display = "none";
+    boxTxtInferior.style.visibility = "hidden";
   } else {
-    pDelBoxI.style.display = "block";
+    boxTxtInferior.style.visibility = "visible";
   }
 };
 sinTextoInf.addEventListener(`change`, ocultarTextoI);
