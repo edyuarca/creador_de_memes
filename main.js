@@ -19,7 +19,7 @@ const descargarMeme = document.getElementById("descargar_meme");
 /*aside imagen*/
 
 const asideImagen = document.getElementById("aside_imagen");
-const campoUrl = document.getElementById("url");
+const campoUrl = document.getElementById("url")
 const fondo = document.getElementById("fondo");
 const fondoDesplegable = document.getElementById("fondo_desplegable");
 const colorHex = document.getElementById("color_hex");
@@ -134,9 +134,8 @@ modoClaro.addEventListener(`click`, pruebaBtnModos2);
 /*boton url y box img meme */
 
 const cambiarImagen = () => {
-  boxImagen.style.backgroundImage = `url(${campoUrl.value})`;
+  boxImagen.style.backgroundImage = `url('${campoUrl.value}')`;
 };
-
 campoUrl.addEventListener("input", cambiarImagen);
 
 /*boton color fondo imagen */
