@@ -308,11 +308,11 @@ const cambioColorTxt = () => {
 colorTexto.addEventListener(`input`, cambioColorTxt);
 
 const cambioFondoTxt = () => {
-  const colorFondoTxt = fondoTexto.value
-  boxTxtSuperior.style.backgroundColor = colorFondoTxt
-  boxTxtInferior.style.backgroundColor = colorFondoTxt
-  colorHexTxt2.textContent = colorFondoTxt
-}
+  const colorFondoTxt = fondoTexto.value;
+  boxTxtSuperior.style.backgroundColor = colorFondoTxt;
+  boxTxtInferior.style.backgroundColor = colorFondoTxt;
+  colorHexTxt2.textContent = colorFondoTxt;
+};
 
 fondoTexto.addEventListener(`input`, cambioFondoTxt);
 
@@ -321,7 +321,7 @@ const ocultarBoxTexto = () => {
     boxTxtSuperior.style.backgroundColor = "transparent";
     boxTxtInferior.style.backgroundColor = "transparent";
   } else {
-    boxTxtSuperior.style.backgroundColor = ""; 
+    boxTxtSuperior.style.backgroundColor = "";
     boxTxtInferior.style.backgroundColor = "";
   }
 };
@@ -331,22 +331,22 @@ const contornoOscuroTxt = () => {
   pDelBoxS.style.textShadow = "-1px 1px 1px black";
   pDelBoxI.style.textShadow = "-1px 1px 1px black";
 };
-contornoOscuro.addEventListener(`click`, contornoOscuroTxt)
+contornoOscuro.addEventListener(`click`, contornoOscuroTxt);
 
 const contornoClaroTxt = () => {
   pDelBoxS.style.textShadow = "-1px 1px 1px white";
   pDelBoxI.style.textShadow = "-1px 1px 1px white";
 };
-contornoClaro.addEventListener(`click`, contornoClaroTxt)
+contornoClaro.addEventListener(`click`, contornoClaroTxt);
 
 const sinContornoTxt = () => {
   pDelBoxS.style.textShadow = "none";
   pDelBoxI.style.textShadow = "none";
 };
-noContorno.addEventListener(`click`, sinContornoTxt)
+noContorno.addEventListener(`click`, sinContornoTxt);
 
 const espaciadoBox = () => {
-  const valorEspaciado = espaciado.value + 'px';
+  const valorEspaciado = espaciado.value + "px";
   boxTxtSuperior.style.paddingTop = valorEspaciado;
   boxTxtSuperior.style.paddingBottom = valorEspaciado;
   boxTxtInferior.style.paddingTop = valorEspaciado;
@@ -360,3 +360,11 @@ const interlineadoBox = (e) => {
   boxTxtInferior.style.lineHeight = valorInterlineado;
 };
 interlineado.addEventListener(`change`, interlineadoBox);
+
+const descargaMeme = () => {
+  domtoimage.toBlob(memeBox).then(function (blob) {
+    saveAs(blob, "meme.png");
+  });
+};
+
+descargarMeme.addEventListener("click", descargaMeme);
