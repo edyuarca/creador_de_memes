@@ -1,6 +1,6 @@
 # Generador de Memes
 
-Este proyecto toma imagenes a través de una url, las cuales se pueden modificar en cuanto a color y texto con el fin de generar un "meme" para descarga. Es mi primer acercamiento a Javascript y allí implemente los conocimientos que fui adquiriendo. 
+Este proyecto toma imagenes a través de una url, las cuales se pueden modificar en cuanto a color y texto con el fin de generar un "meme" para descarga. Es mi primer acercamiento a Javascript y allí implementé los conocimientos que fui adquiriendo. 
 
 Consta de cuatro partes:
 
@@ -9,21 +9,21 @@ Consta de cuatro partes:
 3. [Panel Texto](#Paneltexto)
 4. [Meme contenedor](#Memecontenedor)
 
-> *Las metodología utilizadas fueron HTML, CSS y Javascript junto a las librerias fileserver y la extensión DOM to image para lograr la descarga al ordenador la imagen del meme que se haya creado.*
+> *Las metodologías utilizadas fueron HTML, CSS y Javascript junto a las librerias fileserver y  DOM to image para lograr la descarga del meme que se haya creado.*
 
 ## Nav Bar 
 
 <img src="imagenes/navbar.png" alt="" width="600">
 
-La barra de navegación contiene el panel de texto, el de imagen y la opción del modo claro/oscuro, los cuales se van intercambiando con su evento click correspondiente. 
+La barra de navegación contiene el panel de texto, de imagen y la opción del modo claro/oscuro, los cuales se van intercambiando con su evento click correspondiente. 
 
 ## Panel imagen 
 
 <img src="imagenes/panelImage.png" alt="" width="600">
 
-En esta sección se ingresa por URL una imagen que será el template del meme, se aplica un color de fondo para implementar los modos de fusión de imagen junto (o no) con los filtros según las preferencias del usuario; adicionalmente se incluyó el botón de reestablecer los filtros de la imagen devolviendola a su estado original. 
+En esta sección se ingresa por URL una imagen que será el template del meme, se aplica un color de fondo para implementar los modos de fusión de imagen junto *(o no)* con los filtros según las preferencias del usuario; adicionalmente se incluyó el botón de reestablecer los filtros de la imagen devolviéndola a su estado original. 
 
-> *Esto logró mediante eventos input, click y change.*
+> *Esto se logró mediante eventos input, click y change.*
 
 ## Panel texto 
 
@@ -39,7 +39,7 @@ Este panel contiene varias funcionalidades que modifican el texto ya sea el cont
 
 Una vez ingresada la imagen, realizado los cambios de color o filtros en la misma y al haber modificado el texto según las preferencias el meme está listo para descargar. 
 
-> *Se utilizó la biblioteca dom-to-image para generar una imagen a partir del contenido del contenedor del meme y fileserver para que dicha imagen se pueda guardar en el ordenador con formato PNG y el nombre  "memepng".*
+> *Se utilizó la biblioteca dom-to-image para generar una imagen a partir del contenido del contenedor del meme y fileserver para que dicha imagen se pueda guardar en el ordenador con formato PNG y el nombre  "meme.png".*
 
 <br>
 
