@@ -11,22 +11,51 @@
       <h1>Generador de Memes</h1>
       <ul class="menu_meme">
         <li id="icono_imagen">
-          <img src="imagenes/img icon.png" alt="icono imagen" /><span
+          <img src="imagenes/img icon.png" alt="iconoImagen" /><span
             >Imagen</span
           >
         </li>
         <li id="icono_texto">
-          <img src="imagenes/texto icono.png" alt="icono texto" /><span
+          <img src="imagenes/texto icono.png" alt="iconoTexto" /><span
             >Texto</span
           >
         </li>
         <li id="modo_oscuro">
-          <img src="imagenes/modo-oscuro icono.png" alt="modo oscuro" /><span
+          <img src="imagenes/modo-oscuro icono.png" alt="modoOscuro" /><span
             >Modo oscuro</span
           >
         </li>
         <li id="modo_claro">
-          <img src="imagenes/modo-claro-icono.png" alt="modo claro" /><span
+          <img src="imagenes/modo-claro-icono.png" alt="modoClaro" /><span
+            >Modo claro</span
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="encabezadoMobile">
+      <h1>Generador de Memes</h1>
+    </div>
+
+    <nav class="OcultarMenuM">
+      <ul class="menu_meme" id="menuMobile">
+        <li id="icono_imagen">
+          <img src="imagenes/img icon.png" alt="iconoImagen" /><span
+            >Imagen</span
+          >
+        </li>
+        <li id="icono_texto">
+          <img src="imagenes/texto icono.png" alt="iconoTexto" /><span
+            >Texto</span
+          >
+        </li>
+        <li id="modo_oscuro">
+          <img src="imagenes/modo-oscuro icono.png" alt="modoOscuro" /><span
+            >Modo oscuro</span
+          >
+        </li>
+        <li id="modo_claro">
+          <img src="imagenes/modo-claro-icono.png" alt="modoClaro" /><span
             >Modo claro</span
           >
         </li>
@@ -122,10 +151,10 @@
                 type="range"
                 id="contraste"
                 name="contraste"
-                min="100%"
-                max="1000%"
-                step="1%"
-                value="100%"
+                min="100"
+                max="1000"
+                step="1"
+                value="100"
               />
 
               <label for="desenfoque">Desenfoque</label>
@@ -133,10 +162,10 @@
                 type="range"
                 id="desenfoque"
                 name="desenfoque"
-                min="0px"
-                max="10px"
-                step="0.1px"
-                value="0px"
+                min="0"
+                max="10"
+                step="0.1"
+                value="0"
               />
 
               <label for="escala_grises">Escala de grises</label>
@@ -144,10 +173,10 @@
                 type="range"
                 id="escala_grises"
                 name="escala_grises"
-                min="0%"
-                max="100%"
-                step="1%"
-                value="1%"
+                min="0"
+                max="100"
+                step="1"
+                value="1"
               />
 
               <label for="sepia">Sepia</label>
@@ -155,10 +184,10 @@
                 type="range"
                 id="sepia"
                 name="sepia"
-                min="0%"
-                max="100%"
-                step="1%"
-                value="0%"
+                min="0"
+                max="100"
+                step="1"
+                value="0"
               />
 
               <label for="hue">Hue</label>
@@ -166,10 +195,10 @@
                 type="range"
                 id="hue"
                 name="hue"
-                min="0deg"
-                max="359deg"
-                step="1deg  "
-                value="0deg"
+                min="0"
+                max="359"
+                step="1"
+                value="0"
               />
 
               <label for="saturado">Saturado</label>
@@ -177,10 +206,10 @@
                 type="range"
                 id="saturado"
                 name="saturado"
-                min="100%"
-                max="1000%"
-                step="10%"
-                value="100%"
+                min="100"
+                max="1000"
+                step="10"
+                value="100"
               />
 
               <label for="negativo">Negativo</label>
@@ -391,7 +420,12 @@
     </div>
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
   </body>
 </html>

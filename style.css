@@ -5,14 +5,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 .encabezado {
+  display: none;
+}
+
+.encabezadoMobile {
   background: linear-gradient(to top, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
 }
-.encabezado h1 {
+
+.encabezadoMobile h1 {
   font-family: "Quattrocento Sans", sans-serif;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1.2rem;
   color: #fff;
   text-shadow: 2px 2px 4px #000;
   text-align: center;
@@ -23,30 +27,25 @@
   display: flex;
   justify-content: center;
   list-style: none;
-  padding-bottom: 40px;
+  padding: 20px 0;
 }
 
 .menu_meme li {
   display: flex;
   font-family: "Quattrocento Sans", sans-serif;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  background: linear-gradient(to top, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
   color: #fff;
-  text-shadow: 1px 1px 3px #000;
   padding: 7px;
   margin: 0 5px;
-}
-
-.menu_meme li:hover {
-  transition: background-color 0.5s;
-  background-color: #0098b3;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px #000;
+  border-radius: 20px;
+  border: #0098b3 1px solid;
+  text-shadow: 1px 1px 3px #000;
 }
 
 .menu_meme img {
   width: 20px;
   height: 20px;
-  margin-left: 5px;
 }
 
 .menu_meme span {
@@ -58,310 +57,416 @@
   display: none;
 }
 
-/*panel imagen*/
-
-.contenedor_general {
-  display: flex;
-}
-
-.aside_imagen {
-  display: flex;
-  justify-content: center;
-  width: 250px;
-  height: 100vh;
-  background: linear-gradient(to right, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
-}
-
-.aside_imagen form {
-  width: 100%;
-  padding: 0 20px;
-}
-
-.aside_imagen_filtros {
-  display: flex;
-  flex-direction: column;
-}
-
-.aside_imagen_filtros label {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-weight: lighter;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
-  padding-top: 15px;
-  font-size: 1.1rem;
-}
-
-.aside_imagen h2 {
-  font-family: "Quattrocento Sans", sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 50px 0 20px 0;
-  text-shadow: 1px 1px 3px #000;
-}
-
-.aside_imagen h3 {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-weight: lighter;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
-}
-
-.campo_url {
-  padding: 10px 0;
-}
-
-.campo_url input {
-  width: 100%;
-  height: 25px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-}
-
-.botones_fondo {
-  display: flex;
-  padding: 10px 0;
-}
-
-.contenedor_fondo_desplegable {
-  width: 50%;
-}
-.contenedor_fondo_color {
-  width: 50%;
-  background-color: #ecf1f2;
-  border-radius: 10px;
-  padding-top: 3px;
-  padding-left: 7px;
-}
-
-.btn_fondo_color {
-  width: 30%;
-}
-.contenedor_fondo_color span {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-size: 0.8rem;
-}
-
-.btn_fondo_desplegable {
-  width: 100%;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-  border-color: #1ac2e0;
-}
-
-.btn_reestablecer_img {
-  background-color: #0098b3;
-  border-radius: 10px;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
-  font-family: "Quattrocento Sans", sans-serif;
-  padding: 8px;
-  font-size: 0.9rem;
-  margin-top: 20px;
-}
-
-.btn_reestablecer_img:hover {
-  transition: background-color 0.3s;
-  background-color: #0088a0;
-}
-
-/*panel texto*/
-
-#aside_texto {
-  display: none;
-}
-
-.aside_texto {
-  display: flex;
-  justify-content: center;
-  width: 250px;
-  height: 100vh;
-  margin: 0;
-  background: linear-gradient(to right, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
-}
-
-.aside_texto form {
-  width: 100%;
-  padding: 0 20px;
-}
-
-.aside_texto h2 {
-  font-family: "Quattrocento Sans", sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 50px 0 20px 0;
-  text-shadow: 1px 1px 3px #000;
-}
-
-.aside_texto h3 {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-weight: lighter;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
-  padding: 15px 0 5px 0;
-}
-
-.texto_meme {
-  display: flex;
-  width: 100%;
-  height: 25px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-  margin-bottom: 5px;
-}
-
-.color_checkbox {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-weight: lighter;
-  color: #fff;
-  text-shadow: 1px 1px 1px #000;
-}
-
-.fuentes_desplegables {
-  width: 100%;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-  border-color: #1ac2e0;
-  margin-bottom: 5px;
-  font-family: "Quattrocento Sans", sans-serif;
-  font-weight: lighter;
-}
-
-.txt_fondo_color {
-  background-color: #ecf1f2;
-  border-radius: 10px;
-  padding-top: 3px;
-  padding-left: 7px;
-}
-
-.txt_fondo_color span {
-  font-family: "Quattrocento Sans", sans-serif;
-  font-size: 0.8rem;
-  padding-left: 5px;
-}
-
-.btn_color_fondo_txt {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.btn_color_fondo_txt div {
-  width: 100%;
-}
-
-.tamano_alineacion {
-  display: flex;
-}
-
-.btn_alineacion img {
-  width: 30px;
-  height: 25px;
-}
-
-.btn_number_fuente {
-  width: 45%;
-  margin-right: 5px;
-}
-
-.btn_number_fuente input {
-  width: 100%;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-  border-color: #1ac2e0;
-  margin-top: 3px;
-}
-
-.color_fondo_texto {
-  display: flex;
-}
-
-.btn_text_color {
-  width: 30%;
-  background-color: #ecf1f2;
-  border:none
-}
-
-.btn_contorno {
-  display: flex;
-  gap: 2px;
-}
-.btn_contorno button {
-  background-color: #0098b3;
-  border-radius: 10px;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
-  font-family: "Quattrocento Sans", sans-serif;
-  padding: 5px;
-  font-size: 0.7rem;
-}
-
-.btn_contorno button:hover {
-  transition: background-color 0.3s;
-  background-color: #0088a0;
-}
-
-.btn_espaciado {
-  width: 100%;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-  border-color: #1ac2e0;
-}
-
-.btn_interlineado {
-  width: 100%;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #ecf1f2;
-  border-color: #1ac2e0;
-}
-
-/*caja meme*/
-
 .box_meme {
-  align-self: center;
+  width: 80%;
   margin: auto;
-}
-.box_meme div button {
-  background-color: #0098b3;
-  border-radius: 10px;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
-  font-family: "Quattrocento Sans", sans-serif;
-  padding: 5px;
-  font-size: 1.5rem;
-  margin-top: 50px;
-}
-
-.imagen_meme {
-  width: 700px;
-  height: 400px;
-  background-color: white;
-  background-size: cover; 
+  margin-top: 15px;
 }
 
 .box_texto {
-  padding: 10px;
   background-color: #ceedfa;
 }
 
 .box_texto p {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.2rem;
   font-weight: 900;
   padding: 18px;
 }
 
-.btn_descargar {
+.imagen_meme {
   width: 100%;
+  height: 250px;
+}
+
+.btn_descargar {
   display: flex;
   justify-content: center;
 }
 
-.box_meme_shadow {
-  box-shadow: 2px 2px 4px #706d6d;
+.btn_descargar button {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 0.9rem;
+  background: linear-gradient(to top, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
+  color: #fff;
+  padding: 7px;
+  margin: 0 5px;
+  border-radius: 20px;
+  border: #0098b3 1px solid;
+  text-shadow: 1px 1px 3px #000;
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .encabezadoMobile {
+    display: none;
+  }
+  .encabezado {
+    display: block;
+    background: linear-gradient(to top, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
+  }
+
+  .encabezado h1 {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    text-align: center;
+    padding: 30px;
+  }
+  .OcultarMenuM {
+    display: none;
+  }
+  .menu_meme {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-bottom: 40px;
+  }
+
+  .menu_meme li {
+    display: flex;
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    padding: 7px;
+    margin: 0 5px;
+  }
+
+  .menu_meme li:hover {
+    transition: background-color 0.5s;
+    background-color: #0098b3;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #000;
+  }
+
+  .menu_meme img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
+
+  #modo_claro {
+    display: none;
+  }
+
+  /*panel imagen*/
+
+  .contenedor_general {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .aside_imagen {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(
+      to right,
+      #a9cbe2 0%,
+      #1ac2e0 78%,
+      #1ac2e0 100%
+    );
+  }
+
+  .aside_imagen form {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .aside_imagen_filtros {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside_imagen_filtros label {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    padding-top: 15px;
+    font-size: 1.1rem;
+  }
+
+  .aside_imagen h2 {
+    font-family: "Quattrocento Sans", sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0 20px 0;
+    text-shadow: 1px 1px 3px #000;
+  }
+
+  .aside_imagen h3 {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  .campo_url {
+    padding: 10px 0;
+  }
+
+  .campo_url input {
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+  }
+
+  .botones_fondo {
+    display: flex;
+    padding: 10px 0;
+  }
+
+  .contenedor_fondo_desplegable {
+    width: 50%;
+  }
+  .contenedor_fondo_color {
+    width: 50%;
+    background-color: #ecf1f2;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-left: 7px;
+  }
+
+  .btn_fondo_color {
+    width: 30%;
+  }
+  .contenedor_fondo_color span {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 0.8rem;
+  }
+
+  .btn_fondo_desplegable {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+    border-color: #1ac2e0;
+  }
+
+  .btn_reestablecer_img {
+    background-color: #0098b3;
+    border-radius: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Quattrocento Sans", sans-serif;
+    padding: 8px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .btn_reestablecer_img:hover {
+    transition: background-color 0.3s;
+    background-color: #0088a0;
+  }
+
+  /*panel texto*/
+
+  #aside_texto {
+    display: none;
+  }
+
+  .aside_texto {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(
+      to right,
+      #a9cbe2 0%,
+      #1ac2e0 78%,
+      #1ac2e0 100%
+    );
+  }
+
+  .aside_texto form {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .aside_texto h2 {
+    font-family: "Quattrocento Sans", sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0 20px 0;
+    text-shadow: 1px 1px 3px #000;
+  }
+
+  .aside_texto h3 {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    padding: 15px 0 5px 0;
+  }
+
+  .texto_meme {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+    margin-bottom: 5px;
+  }
+
+  .color_checkbox {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  .fuentes_desplegables {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+    border-color: #1ac2e0;
+    margin-bottom: 5px;
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: lighter;
+  }
+
+  .txt_fondo_color {
+    background-color: #ecf1f2;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-left: 7px;
+  }
+
+  .txt_fondo_color span {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 0.8rem;
+    padding-left: 5px;
+  }
+
+  .btn_color_fondo_txt {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .btn_color_fondo_txt div {
+    width: 100%;
+  }
+
+  .tamano_alineacion {
+    display: flex;
+  }
+
+  .btn_alineacion img {
+    width: 30px;
+    height: 25px;
+  }
+
+  .btn_number_fuente {
+    width: 45%;
+    margin-right: 5px;
+  }
+
+  .btn_number_fuente input {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+    border-color: #1ac2e0;
+    margin-top: 3px;
+  }
+
+  .color_fondo_texto {
+    display: flex;
+  }
+
+  .btn_text_color {
+    width: 30%;
+    background-color: #ecf1f2;
+    border: none;
+  }
+
+  .btn_contorno {
+    display: flex;
+    gap: 2px;
+  }
+  .btn_contorno button {
+    background-color: #0098b3;
+    border-radius: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Quattrocento Sans", sans-serif;
+    padding: 5px;
+    font-size: 0.7rem;
+  }
+
+  .btn_contorno button:hover {
+    transition: background-color 0.3s;
+    background-color: #0088a0;
+  }
+
+  .btn_espaciado {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+    border-color: #1ac2e0;
+  }
+
+  .btn_interlineado {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ecf1f2;
+    border-color: #1ac2e0;
+  }
+
+  /*caja meme*/
+
+  .box_meme {
+    margin: auto;
+    width: 50%;
+  }
+  .box_meme div button {
+    background-color: #0098b3;
+    border-radius: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Quattrocento Sans", sans-serif;
+    padding: 5px;
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+
+  .imagen_meme {
+    height: 400px;
+    background-color: white;
+    background-size: cover;
+  }
+
+  .box_texto {
+    padding: 10px;
+    background-color: #ceedfa;
+  }
+
+  .box_texto p {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 18px;
+  }
+
+  .btn_descargar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .box_meme_shadow {
+    box-shadow: 2px 2px 4px #706d6d;
+  }
 }

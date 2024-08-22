@@ -6,6 +6,7 @@ const iconoImagen = document.getElementById("icono_imagen");
 const iconoTexto = document.getElementById("icono_texto");
 const modoOscuro = document.getElementById("modo_oscuro");
 const modoClaro = document.getElementById("modo_claro");
+const menuMobile = document.getElementById("menuMobile");
 
 /*contenedor meme*/
 
@@ -18,7 +19,7 @@ const descargarMeme = document.getElementById("descargar_meme");
 /*aside imagen*/
 
 const asideImagen = document.getElementById("aside_imagen");
-const campoUrl = document.getElementById("url")
+const campoUrl = document.getElementById("url");
 const fondo = document.getElementById("fondo");
 const fondoDesplegable = document.getElementById("fondo_desplegable");
 const colorHex = document.getElementById("color_hex");
@@ -66,6 +67,9 @@ const interlineado = document.getElementById("interlineado");
 
 /*Funciones paneles*/
 
+const ocultarMenuMobile = () => {
+  menuMobile.style.display = "none";
+};
 const ocultarPanelImagen = () => {
   asideImagen.style.display = "none";
 };
