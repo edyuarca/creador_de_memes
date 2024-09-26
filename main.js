@@ -134,6 +134,39 @@ modoOscuro.addEventListener(`click`, pruebaBtnModos1);
 modoClaro.addEventListener(`click`, visualizacionFondoModos2);
 modoClaro.addEventListener(`click`, pruebaBtnModos2);
 
+/*cambio de paneles mobile */
+
+const iconoImagenM = document.getElementById("icono_imagenM");
+const iconoTextoM = document.getElementById("icono_textoM");
+const modoOscuroM = document.getElementById("modo_oscuroM");
+const modoClaroM = document.getElementById("modo_claroM");
+
+const ocultarPanelImagenM = () => {
+  asideImagen.style.display = "none";
+  asideTexto.style.display = "block";
+};
+const ocultarPanelTextoM = () => {
+  asideTexto.style.display = "none";
+  asideImagen.style.display = "block";
+};
+
+iconoTextoM.addEventListener(`click`, ocultarPanelImagenM);
+iconoImagenM.addEventListener(`click`, ocultarPanelTextoM);
+
+const activarModoOscuroM = () => {
+  body.style.backgroundColor = `rgb(68, 73, 79)`;
+  modoClaroM.style.display = "block";
+  modoOscuroM.style.display = "none";
+};
+
+const activarModoClaroM = () => {
+  body.style.backgroundColor = `rgb(255, 255, 255)`;
+  modoOscuroM.style.display = "block";
+  modoClaroM.style.display = "none";
+};
+
+modoOscuroM.addEventListener(`click`, activarModoOscuroM);
+modoClaroM.addEventListener(`click`, activarModoClaroM);
 /*boton url y box img meme */
 
 const cambiarImagen = () => {
@@ -175,7 +208,7 @@ contraste.addEventListener(`input`, filtroContraste);
 
 const filtroDesenfoque = () => {
   const valorDesenfoque = desenfoque.value;
-  boxImagen.style.filter = `blur(${valorDesenfoque})`;
+  boxImagen.style.filter = `blur(${valorDesenfoque}px)`;
 };
 desenfoque.addEventListener(`input`, filtroDesenfoque);
 
@@ -193,13 +226,13 @@ sepia.addEventListener(`input`, filtroSepia);
 
 const filtroHue = () => {
   const valorHue = hue.value;
-  boxImagen.style.filter = `hue-rotate(${valorHue})`;
+  boxImagen.style.filter = `hue-rotate(${valorHue}deg)`;
 };
 hue.addEventListener(`input`, filtroHue);
 
 const filtroSaturacion = () => {
   const valorSaturacion = saturado.value;
-  boxImagen.style.filter = `saturation(${valorSaturacion})`;
+  boxImagen.style.filter = `saturate(${valorSaturacion})`;
 };
 saturado.addEventListener(`input`, filtroSaturacion);
 

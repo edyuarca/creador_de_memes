@@ -53,18 +53,24 @@
   margin-right: 5px;
 }
 
-#modo_claro {
+#modo_claroM {
   display: none;
 }
 
+.contenedor_general {
+  margin-bottom: 50px;
+}
 .box_meme {
   width: 80%;
   margin: auto;
   margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 .box_texto {
   background-color: #ceedfa;
+  position: relative;
+  z-index: 2;
 }
 
 .box_texto p {
@@ -76,8 +82,29 @@
 }
 
 .imagen_meme {
+  position: relative;
   width: 100%;
-  height: 250px;
+  height: 400px;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.imagen_meme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  filter: brightness(1);
 }
 
 .btn_descargar {
@@ -97,6 +124,236 @@
   text-shadow: 1px 1px 3px #000;
   margin-top: 30px;
 }
+
+.aside_imagen {
+  padding: 30px;
+  margin: auto;
+  width: 80%;
+  background: linear-gradient(to right, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
+}
+
+.aside_imagen h2 {
+  font-family: "Quattrocento Sans", sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.aside_imagen h3 {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.url_container {
+  display: flex;
+}
+
+.url_container h3 {
+  margin: 8px 0;
+}
+
+.campo_url {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.campo_url input {
+  width: 100%;
+}
+
+.botones_fondo {
+  display: flex;
+  padding: 10px 0;
+}
+
+.contenedor_fondo_color {
+  width: 50%;
+  background-color: #ecf1f2;
+  border-radius: 10px;
+  padding-top: 3px;
+  padding-left: 7px;
+}
+
+.contenedor_fondo_desplegable {
+  width: 50%;
+}
+
+.btn_fondo_desplegable {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ecf1f2;
+  border-color: #1ac2e0;
+}
+
+.aside_imagen_filtros {
+  display: flex;
+  flex-direction: column;
+}
+.aside_imagen_filtros label {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  padding-top: 15px;
+  font-size: 1.1rem;
+}
+
+.btn_reestablecer_img {
+  background-color: #0098b3;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  font-family: "Quattrocento Sans", sans-serif;
+  padding: 8px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+.aside_texto form {
+  width: 80%;
+}
+#aside_texto {
+  display: none;
+}
+.aside_texto {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  background: linear-gradient(to right, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
+}
+
+.aside_texto form {
+  width: 100%;
+  padding: 30px;
+}
+
+.texto_meme {
+  display: flex;
+  width: 100%;
+  height: 25px;
+  border-radius: 10px;
+  background-color: #ecf1f2;
+  margin-bottom: 5px;
+}
+.fuentes_desplegables {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ecf1f2;
+  border-color: #1ac2e0;
+  margin-bottom: 5px;
+  font-family: "Quattrocento Sans", sans-serif;
+  font-weight: lighter;
+}
+.tamano_alineacion {
+  display: flex;
+}
+
+.btn_number_fuente {
+  width: 45%;
+  margin-right: 5px;
+}
+
+.btn_number_fuente input {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ecf1f2;
+  border-color: #1ac2e0;
+  margin-top: 3px;
+}
+
+.btn_alineacion img {
+  width: 30px;
+  height: 25px;
+}
+
+.btn_color_fondo_txt {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.aside_texto h2 {
+  font-family: "Quattrocento Sans", sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.aside_texto h3 {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  padding: 15px 0 5px 0;
+}
+
+.color_checkbox {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.txt_fondo_color {
+  background-color: #ecf1f2;
+  border-radius: 10px;
+  padding-top: 3px;
+  padding-left: 7px;
+}
+
+.txt_fondo_color span {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+
+.btn_color_fondo_txt div {
+  width: 100%;
+}
+
+.color_fondo_texto {
+  display: flex;
+}
+
+.btn_text_color {
+  width: 30%;
+  background-color: #ecf1f2;
+  border: none;
+}
+
+.btn_contorno {
+  display: flex;
+  gap: 2px;
+}
+.btn_contorno button {
+  background-color: #0098b3;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  font-family: "Quattrocento Sans", sans-serif;
+  padding: 5px;
+  font-size: 0.7rem;
+}
+
+.btn_espaciado {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ecf1f2;
+  border-color: #1ac2e0;
+}
+
+.btn_interlineado {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ecf1f2;
+  border-color: #1ac2e0;
+}
 @media (min-width: 768px) {
   .encabezadoMobile {
     display: none;
@@ -106,6 +363,9 @@
     background: linear-gradient(to top, #a9cbe2 0%, #1ac2e0 78%, #1ac2e0 100%);
   }
 
+  #modo_claro {
+    display: none;
+  }
   .encabezado h1 {
     font-family: "Quattrocento Sans", sans-serif;
     font-weight: bold;
@@ -157,9 +417,12 @@
   .contenedor_general {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0;
   }
 
   .aside_imagen {
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     width: 250px;
@@ -172,6 +435,10 @@
     );
   }
 
+  .aside_imagen h2 {
+    padding: 50px 0 20px 0;
+  }
+
   .aside_imagen form {
     width: 100%;
     padding: 0 20px;
@@ -182,30 +449,12 @@
     flex-direction: column;
   }
 
-  .aside_imagen_filtros label {
-    font-family: "Quattrocento Sans", sans-serif;
-    font-weight: lighter;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
-    padding-top: 15px;
-    font-size: 1.1rem;
+  .url_container {
+    display: block;
   }
-
-  .aside_imagen h2 {
-    font-family: "Quattrocento Sans", sans-serif;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0 20px 0;
-    text-shadow: 1px 1px 3px #000;
+  .url_container h3 {
+    margin: 0;
   }
-
-  .aside_imagen h3 {
-    font-family: "Quattrocento Sans", sans-serif;
-    font-weight: lighter;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
-  }
-
   .campo_url {
     padding: 10px 0;
   }
@@ -217,36 +466,12 @@
     background-color: #ecf1f2;
   }
 
-  .botones_fondo {
-    display: flex;
-    padding: 10px 0;
-  }
-
-  .contenedor_fondo_desplegable {
-    width: 50%;
-  }
-  .contenedor_fondo_color {
-    width: 50%;
-    background-color: #ecf1f2;
-    border-radius: 10px;
-    padding-top: 3px;
-    padding-left: 7px;
-  }
-
   .btn_fondo_color {
     width: 30%;
   }
   .contenedor_fondo_color span {
     font-family: "Quattrocento Sans", sans-serif;
     font-size: 0.8rem;
-  }
-
-  .btn_fondo_desplegable {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ecf1f2;
-    border-color: #1ac2e0;
   }
 
   .btn_reestablecer_img {
@@ -267,22 +492,10 @@
 
   /*panel texto*/
 
-  #aside_texto {
-    display: none;
-  }
-
   .aside_texto {
-    display: flex;
-    justify-content: center;
     width: 250px;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(
-      to right,
-      #a9cbe2 0%,
-      #1ac2e0 78%,
-      #1ac2e0 100%
-    );
   }
 
   .aside_texto form {
@@ -290,138 +503,13 @@
     padding: 0 20px;
   }
 
-  .aside_texto h2 {
-    font-family: "Quattrocento Sans", sans-serif;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0 20px 0;
-    text-shadow: 1px 1px 3px #000;
-  }
-
-  .aside_texto h3 {
-    font-family: "Quattrocento Sans", sans-serif;
-    font-weight: lighter;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
-    padding: 15px 0 5px 0;
-  }
-
-  .texto_meme {
-    display: flex;
-    width: 100%;
-    height: 25px;
-    border-radius: 10px;
-    background-color: #ecf1f2;
-    margin-bottom: 5px;
-  }
-
-  .color_checkbox {
-    font-family: "Quattrocento Sans", sans-serif;
-    font-weight: lighter;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-  }
-
-  .fuentes_desplegables {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ecf1f2;
-    border-color: #1ac2e0;
-    margin-bottom: 5px;
-    font-family: "Quattrocento Sans", sans-serif;
-    font-weight: lighter;
-  }
-
-  .txt_fondo_color {
-    background-color: #ecf1f2;
-    border-radius: 10px;
-    padding-top: 3px;
-    padding-left: 7px;
-  }
-
-  .txt_fondo_color span {
-    font-family: "Quattrocento Sans", sans-serif;
-    font-size: 0.8rem;
-    padding-left: 5px;
-  }
-
-  .btn_color_fondo_txt {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .btn_color_fondo_txt div {
-    width: 100%;
-  }
-
-  .tamano_alineacion {
-    display: flex;
-  }
-
-  .btn_alineacion img {
-    width: 30px;
-    height: 25px;
-  }
-
-  .btn_number_fuente {
-    width: 45%;
-    margin-right: 5px;
-  }
-
-  .btn_number_fuente input {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ecf1f2;
-    border-color: #1ac2e0;
-    margin-top: 3px;
-  }
-
-  .color_fondo_texto {
-    display: flex;
-  }
-
-  .btn_text_color {
-    width: 30%;
-    background-color: #ecf1f2;
-    border: none;
-  }
-
-  .btn_contorno {
-    display: flex;
-    gap: 2px;
-  }
-  .btn_contorno button {
-    background-color: #0098b3;
-    border-radius: 10px;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
-    font-family: "Quattrocento Sans", sans-serif;
-    padding: 5px;
-    font-size: 0.7rem;
-  }
-
   .btn_contorno button:hover {
     transition: background-color 0.3s;
     background-color: #0088a0;
   }
 
-  .btn_espaciado {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ecf1f2;
-    border-color: #1ac2e0;
-  }
-
-  .btn_interlineado {
-    width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ecf1f2;
-    border-color: #1ac2e0;
+  .aside_texto h2 {
+    padding: 50px 0 20px 0;
   }
 
   /*caja meme*/
@@ -430,7 +518,7 @@
     margin: auto;
     width: 50%;
   }
-  .box_meme div button {
+  .btn_descargar button {
     background-color: #0098b3;
     border-radius: 10px;
     color: #fff;
@@ -442,14 +530,34 @@
   }
 
   .imagen_meme {
-    height: 400px;
-    background-color: white;
+    position: relative;
+    height: 600px;
+    background-color: #fff;
     background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .imagen_meme::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: brightness(1);
   }
 
   .box_texto {
     padding: 10px;
     background-color: #ceedfa;
+    position: relative;
+    z-index: 2;
   }
 
   .box_texto p {

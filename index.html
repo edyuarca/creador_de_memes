@@ -39,22 +39,22 @@
 
     <nav class="OcultarMenuM">
       <ul class="menu_meme" id="menuMobile">
-        <li id="icono_imagen">
+        <li id="icono_imagenM">
           <img src="imagenes/img icon.png" alt="iconoImagen" /><span
             >Imagen</span
           >
         </li>
-        <li id="icono_texto">
+        <li id="icono_textoM">
           <img src="imagenes/texto icono.png" alt="iconoTexto" /><span
             >Texto</span
           >
         </li>
-        <li id="modo_oscuro">
+        <li id="modo_oscuroM">
           <img src="imagenes/modo-oscuro icono.png" alt="modoOscuro" /><span
             >Modo oscuro</span
           >
         </li>
-        <li id="modo_claro">
+        <li id="modo_claroM">
           <img src="imagenes/modo-claro-icono.png" alt="modoClaro" /><span
             >Modo claro</span
           >
@@ -65,12 +65,14 @@
     <div class="contenedor_general">
       <div class="box_meme">
         <div class="box_meme_shadow" id="meme_box">
-          <div class="box_texto" id="txt_superior">
-            <p id="ocultar_texto_sup">TOP TEXT</p>
-          </div>
-          <div class="imagen_meme" id="box_img_meme"></div>
-          <div class="box_texto" id="txt_inferior">
-            <p id="ocultar_texto_inf">BOTTOM TEXT</p>
+          <div class="imagen_meme" id="box_img_meme">
+            <div class="box_texto" id="txt_superior">
+              <p id="ocultar_texto_sup">TOP TEXT</p>
+            </div>
+
+            <div class="box_texto" id="txt_inferior">
+              <p id="ocultar_texto_inf">BOTTOM TEXT</p>
+            </div>
           </div>
         </div>
         <div class="btn_descargar">
@@ -84,7 +86,7 @@
       <div class="aside_imagen" id="aside_imagen">
         <form>
           <h2>IMAGEN</h2>
-          <div>
+          <div class="url_container">
             <h3>URL</h3>
             <div class="campo_url">
               <label for="url"></label>
@@ -151,10 +153,10 @@
                 type="range"
                 id="contraste"
                 name="contraste"
-                min="100"
+                min="1"
                 max="1000"
                 step="1"
-                value="100"
+                value="1"
               />
 
               <label for="desenfoque">Desenfoque</label>
@@ -206,10 +208,10 @@
                 type="range"
                 id="saturado"
                 name="saturado"
-                min="100"
+                min="1"
                 max="1000"
                 step="10"
-                value="100"
+                value="1"
               />
 
               <label for="negativo">Negativo</label>
