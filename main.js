@@ -415,6 +415,7 @@ const descargaMeme = () => {
   domtoimage.toBlob(memeBox).then(function (blob) {
     saveAs(blob, "meme.png");
   });
+  console.log(`memedescargado`);
 };
 
 descargarMeme.addEventListener("click", descargaMeme);
