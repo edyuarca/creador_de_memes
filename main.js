@@ -188,57 +188,72 @@ const modoFusion = (e) => {
 };
 fondoDesplegable.addEventListener(`change`, (e) => modoFusion(e));
 
+let valorBrillo = 1;
+let valorOpacidad = 1;
+let valorContraste = 1;
+let valorDesenfoque = 0;
+let valorEscalaGrises = 0;
+let valorSepia = 0;
+let valorHue = 0;
+let valorSaturacion = 1;
+let valorNegativo = 0;
+
+const aplicarFiltros = () => {
+  boxImagen.style.filter = `brightness(${valorBrillo}) opacity(${valorOpacidad}) contrast(${valorContraste}) blur(${valorDesenfoque}px) grayscale(${valorEscalaGrises}) sepia(${valorSepia}) hue-rotate(${valorHue}deg) saturate(${valorSaturacion}) invert(${valorNegativo})`;
+};
+
 const filtroBrillo = () => {
-  const valorBrillo = brillo.value;
-  boxImagen.style.filter = `brightness(${valorBrillo})`;
+  valorBrillo = brillo.value;
+  aplicarFiltros();
+  console.log(`valor brillo`, valorBrillo);
 };
 brillo.addEventListener(`input`, filtroBrillo);
 
 const filtroOpacidad = () => {
-  const valorOpacidad = opacidad.value;
-  boxImagen.style.filter = `opacity(${valorOpacidad})`;
+  valorOpacidad = opacidad.value;
+  aplicarFiltros();
 };
 opacidad.addEventListener(`input`, filtroOpacidad);
 
 const filtroContraste = () => {
-  const valorContraste = contraste.value;
-  boxImagen.style.filter = `contrast(${valorContraste})`;
+  valorContraste = contraste.value;
+  aplicarFiltros();
 };
 contraste.addEventListener(`input`, filtroContraste);
 
 const filtroDesenfoque = () => {
-  const valorDesenfoque = desenfoque.value;
-  boxImagen.style.filter = `blur(${valorDesenfoque}px)`;
+  valorDesenfoque = desenfoque.value;
+  aplicarFiltros();
 };
 desenfoque.addEventListener(`input`, filtroDesenfoque);
 
 const filtroEscalaGrises = () => {
-  const valorEscalaGrises = escalaDeGrises.value;
-  boxImagen.style.filter = `grayscale(${valorEscalaGrises})`;
+  valorEscalaGrises = escalaDeGrises.value;
+  aplicarFiltros();
 };
 escalaDeGrises.addEventListener(`input`, filtroEscalaGrises);
 
 const filtroSepia = () => {
-  const valorSepia = sepia.value;
-  boxImagen.style.filter = `sepia(${valorSepia})`;
+  valorSepia = sepia.value;
+  aplicarFiltros();
 };
 sepia.addEventListener(`input`, filtroSepia);
 
 const filtroHue = () => {
-  const valorHue = hue.value;
-  boxImagen.style.filter = `hue-rotate(${valorHue}deg)`;
+  valorHue = hue.value;
+  aplicarFiltros();
 };
 hue.addEventListener(`input`, filtroHue);
 
 const filtroSaturacion = () => {
-  const valorSaturacion = saturado.value;
-  boxImagen.style.filter = `saturate(${valorSaturacion})`;
+  valorSaturacion = saturado.value;
+  aplicarFiltros();
 };
 saturado.addEventListener(`input`, filtroSaturacion);
 
 const filtroNegativo = () => {
-  const valorNegativo = negativo.value;
-  boxImagen.style.filter = `invert(${valorNegativo})`;
+  valorNegativo = negativo.value;
+  aplicarFiltros();
 };
 negativo.addEventListener(`input`, filtroNegativo);
 
