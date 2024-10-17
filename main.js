@@ -7,6 +7,7 @@ const iconoTexto = document.getElementById("icono_texto");
 const modoOscuro = document.getElementById("modo_oscuro");
 const modoClaro = document.getElementById("modo_claro");
 const menuMobile = document.getElementById("menuMobile");
+const fondoEncabezado = document.querySelector("nav");
 
 /*contenedor meme*/
 
@@ -84,43 +85,43 @@ const mostrarPanelTexto = () => {
 };
 
 const activarModoOscuro = () => {
-  body.style.backgroundColor = `rgb(68, 73, 79)`;
+  body.classList.add("bodyO");
+  fondoEncabezado.classList.add("encabezadoO");
+  fondoEncabezado.classList.remove("encabezado");
+  fondoEncabezadoM.classList.add("encabezadoMobileO");
+  fondoEncabezado.classList.remove("encabezadoMobile");
+  modoClaro.style.display = "block";
+  modoOscuro.style.display = "none";
+  asideImagen.classList.add("aside_imagenO");
+  asideImagen.classList.remove("aside_imagen");
+  asideTexto.classList.add("aside_textoO");
+  asideTexto.classList.remove("aside_texto");
 };
 const desactivarModoOscuro = () => {
-  body.style.backgroundColor = `rgb(255, 255, 255)`;
-};
-
-const visualizacionFondoModos1 = () => {
-  if (body.style.backgroundColor === `rgb(68, 73, 79)`) {
-    desactivarModoOscuro();
-  } /*esta funcion puede ser remplazada por la de la linea 93*/ else {
-    activarModoOscuro();
-  }
-};
-
-const visualizacionFondoModos2 = () => {
-  if (body.style.backgroundColor === `rgb(255, 255, 255)`) {
-    activarModoOscuro();
-  } /*esta funcion puede ser remplazada por la de la linea 93*/ else {
-    desactivarModoOscuro();
-  }
-};
-
-const activarbtnClaro = () => {
-  modoClaro.style.display = "block";
-};
-const desactivarbtnoscuro = () => {
-  modoOscuro.style.display = "none";
-};
-
-const pruebaBtnModos1 = () => {
-  modoClaro.style.display = "block";
-  modoOscuro.style.display = "none";
-};
-const pruebaBtnModos2 = () => {
+  body.classList.remove("bodyO");
+  fondoEncabezado.classList.add("encabezado");
+  fondoEncabezado.classList.remove("encabezadoO");
+  fondoEncabezadoM.classList.add("encabezadoMobile");
+  fondoEncabezadoM.classList.remove("encabezadoMobileO");
   modoClaro.style.display = "none";
   modoOscuro.style.display = "block";
+  asideImagen.classList.add("aside_imagen");
+  asideImagen.classList.remove("aside_imagenO");
+  asideTexto.classList.add("aside_texto");
+  asideTexto.classList.remove("aside_textoO");
 };
+
+const visualizacionFondoModos = () => {
+  body.classList.toggle("bodyO");
+  if (body.classList.contains("bodyO")) {
+    activarModoOscuro();
+  } else {
+    desactivarModoOscuro();
+  }
+};
+
+modoOscuro.addEventListener(`click`, visualizacionFondoModos);
+modoClaro.addEventListener(`click`, visualizacionFondoModos);
 
 iconoTexto.addEventListener(`click`, mostrarPanelTexto);
 iconoTexto.addEventListener(`click`, ocultarPanelImagen);
@@ -128,18 +129,13 @@ iconoTexto.addEventListener(`click`, ocultarPanelImagen);
 iconoImagen.addEventListener(`click`, mostrarPanelImagen);
 iconoImagen.addEventListener(`click`, ocultarPanelTexto);
 
-modoOscuro.addEventListener(`click`, visualizacionFondoModos1);
-modoOscuro.addEventListener(`click`, pruebaBtnModos1);
-
-modoClaro.addEventListener(`click`, visualizacionFondoModos2);
-modoClaro.addEventListener(`click`, pruebaBtnModos2);
-
 /*cambio de paneles mobile */
 
 const iconoImagenM = document.getElementById("icono_imagenM");
 const iconoTextoM = document.getElementById("icono_textoM");
 const modoOscuroM = document.getElementById("modo_oscuroM");
 const modoClaroM = document.getElementById("modo_claroM");
+const fondoEncabezadoM = document.getElementById("fondoEncabezadoM");
 
 const ocultarPanelImagenM = () => {
   asideImagen.style.display = "none";
@@ -154,19 +150,44 @@ iconoTextoM.addEventListener(`click`, ocultarPanelImagenM);
 iconoImagenM.addEventListener(`click`, ocultarPanelTextoM);
 
 const activarModoOscuroM = () => {
-  body.style.backgroundColor = `rgb(68, 73, 79)`;
+  body.classList.add("bodyO");
+  fondoEncabezadoM.classList.add("encabezadoMobileO");
+  fondoEncabezado.classList.remove("encabezadoMobile");
+  fondoEncabezado.classList.add("encabezadoO");
+  fondoEncabezado.classList.remove("encabezado");
   modoClaroM.style.display = "block";
   modoOscuroM.style.display = "none";
+  asideImagen.classList.add("aside_imagenO");
+  asideImagen.classList.remove("aside_imagen");
+  asideTexto.classList.add("aside_textoO");
+  asideTexto.classList.remove("aside_texto");
 };
 
 const activarModoClaroM = () => {
-  body.style.backgroundColor = `rgb(255, 255, 255)`;
-  modoOscuroM.style.display = "block";
+  body.classList.remove("bodyO");
+  fondoEncabezadoM.classList.add("encabezadoMobile");
+  fondoEncabezadoM.classList.remove("encabezadoMobileO");
+  fondoEncabezado.classList.add("encabezado");
+  fondoEncabezado.classList.remove("encabezadoO");
   modoClaroM.style.display = "none";
+  modoOscuroM.style.display = "block";
+  asideImagen.classList.add("aside_imagen");
+  asideImagen.classList.remove("aside_imagenO");
+  asideTexto.classList.add("aside_texto");
+  asideTexto.classList.remove("aside_textoO");
 };
 
-modoOscuroM.addEventListener(`click`, activarModoOscuroM);
-modoClaroM.addEventListener(`click`, activarModoClaroM);
+const alternarModoOscuro = () => {
+  body.classList.toggle("bodyO");
+  if (body.classList.contains("bodyO")) {
+    activarModoOscuroM();
+  } else {
+    activarModoClaroM();
+  }
+};
+modoOscuroM.addEventListener(`click`, alternarModoOscuro);
+modoClaroM.addEventListener(`click`, alternarModoOscuro);
+
 /*boton url y box img meme */
 
 const cambiarImagen = () => {
